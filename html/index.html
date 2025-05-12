@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jackson Wachira | Graphic Design & UX/UI Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <header>
+    <nav class="fixed-nav" role="navigation" aria-label="Main Navigation">
+      <div class="logo">Jackson Wachira</div>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Hi, I’m Jackson Wachira</h1>
+        <p>Graphic Designer & UX/UI Enthusiast</p>
+        <div class="hero-buttons">
+          <button class="primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'});">View My Work</button>
+          <button class="secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Get In Touch</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="/Assets/j__2_-removebg-preview.png" alt="Portrait of Jackson Wachira" class="profile-img" />
+          <p>I'm a creative Graphic Designer passionate about user-centric design. I specialize in branding, web design, and crafting seamless user experiences across diverse industries.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2>My Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="/Assets/j__2_-removebg-preview.png" alt="Web Design Project Preview" />
+          <div class="portfolio-overlay">
+            <h3>Web Design Project</h3>
+            <p>Branding & UX/UI Design for an e-commerce website</p>
+            <a href="https://embed.figma.com/design/noNtOnGu0rqQJJJoajdaeV/Untitled?node-id=0-1&embed-host=share" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="/Assets/j__2_-removebg-preview.png" alt="Mobile App UI Design Preview" />
+          <div class="portfolio-overlay">
+            <h3>Mobile App Design</h3>
+            <p>UX/UI design for a mobile productivity app</p>
+            <a href="https://embed.figma.com/design/noNtOnGu0rqQJJJoajdaeV/Untitled?node-id=0-1&embed-host=share" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="/Assets/Burger Poster.png" alt="Burger Poster" />
+          <div class="portfolio-overlay">
+            <h3>Event Poster</h3>
+            <p>Designed for a Burger Poster</p>
+            <a href="/Assets/Burger Poster.png" target="" rel="noopener noreferrer">View Full</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="/Assets/fashion brand art design logo(1).png" alt="Fashion Brand Logo" />
+          <div class="portfolio-overlay">
+            <h3>Brand Logo</h3>
+            <p>Minimalistic logo design for a fashion brand</p>
+            <a href="/Assets/fashion brand art design logo(1).png" target="" rel="noopener noreferrer">View Full</a>
+          </div>
+        </div>
+
+        <div class="portfolio-item">
+          <img src="/Assets/automotive cover magazine.jpg" alt="Automotive Poster Design" />
+          <div class="portfolio-overlay">
+            <h3>Mockup Design</h3>
+            <p>Automotive Poster Design</p>
+            <a href="/Assets/automotive cover magazine.jpg" target="" rel="noopener noreferrer">View full</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>My Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <h3>Adobe Illustrator</h3>
+          <div class="skill-bar" data-skill="95%"></div>
+        </div>
+        <div class="skill-item">
+          <h3>Adobe Photoshop</h3>
+          <div class="skill-bar" data-skill="85%"></div>
+        </div>
+        <div class="skill-item">
+          <h3>Sketch</h3>
+          <div class="skill-bar" data-skill="75%"></div>
+        </div>
+        <div class="skill-item">
+          <h3>Figma</h3>
+          <div class="skill-bar" data-skill="85%"></div>
+        </div>
+        <div class="skill-item">
+          <h3>UI/UX Design</h3>
+          <div class="skill-bar" data-skill="65%"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/xkgjpezy" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="success-message" role="alert">Message sent successfully!</p>
+    </section>
+  </main>
+
+  <footer class="fixed-footer">
+    <p>&copy; 2025 Jackson Wachira. All Rights Reserved. | Designed with ❤️</p>
+  </footer>
+
+</body>
+</html>
