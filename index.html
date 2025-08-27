@@ -5,18 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jackson Wachira | Graphic Design & UX/UI Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  
 </head>
 <body>
 
   <header>
     <nav class="fixed-nav" role="navigation" aria-label="Main Navigation">
       <div class="logo">Jackson Wachira</div>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -38,7 +47,7 @@
         <h2>About Me</h2>
         <div class="about-content">
           <img src="/Assets/j__2_-removebg-preview.png" alt="Portrait of Jackson Wachira" class="profile-img" />
-          <p>I'm a creative Graphic Designer passionate about user-centric design. I specialize in branding, web design, and crafting seamless user experiences across diverse industries.</p>
+          <p class="profile-p">I'm a creative Graphic Designer passionate about user-centric design. I specialize in branding, web design, and crafting seamless user experiences across diverse industries.</p>
         </div>
       </div>
     </section>
@@ -140,6 +149,6 @@
   <footer class="fixed-footer">
     <p>&copy; 2025 Jackson Wachira. All Rights Reserved. | Designed with ❤️</p>
   </footer>
-
+<script defer src="script.js"></script>
 </body>
 </html>
