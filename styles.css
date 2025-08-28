@@ -1,6 +1,4 @@
-/* ===================
-   Global Styles
-=================== */
+
 :root {
   --primary: #6e4f74;
   --secondary: #1e1e2f;
@@ -35,9 +33,7 @@ a {
   color: inherit;
 }
 
-/* ===================
-   Top Navbar
-=================== */
+
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -93,9 +89,7 @@ body.dark-mode .fixed-nav {
   width: 100%;
 }
 
-/* ===================
-   Hamburger
-=================== */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -130,36 +124,33 @@ body.dark-mode .hamburger span {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* ===================
-   Mobile nav menu
-=================== */
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
-  .nav-links {
-    display: none;
+    .nav-links {
+    max-height: 0;             
+    overflow: hidden;        
     position: absolute;
-    top: 65px;
+    top: 60px;
     right: 20px;
     background: var(--light);
     flex-direction: column;
+    align-items: flex-start;
     gap: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 0 1.5rem;        
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    min-width: 160px;
+    box-shadow: 0 5px 15px rgba(54, 48, 48, 0.2);
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    width: calc(45% - 40px);  
     z-index: 1001;
   }
 
   .nav-links.active {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
+    max-height: 500px;          
+    padding: 1rem 1.5rem;       
   }
 
   .nav-links a {
@@ -173,9 +164,7 @@ body.dark-mode .hamburger span {
   }
 }
 
-/* ===================
-   Side Navigation (right)
-=================== */
+
 .side-nav {
   position: fixed;
   top: 50%;
@@ -211,9 +200,7 @@ body.dark-mode .hamburger span {
   background: var(--primary);
 }
 
-/* ===================
-   Hero Section
-=================== */
+
 .hero {
   height: 100vh;
   display: flex;
@@ -267,9 +254,7 @@ button.secondary:hover {
   color: var(--primary);
 }
 
-/* ===================
-   About, Portfolio, Skills Sections
-=================== */
+
 .about,
 .skills {
   background: var(--gray);
@@ -309,7 +294,7 @@ body.dark-mode .skills {
   margin-bottom: 2rem;
 }
 
-/* Portfolio grid */
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -355,7 +340,7 @@ body.dark-mode .skills {
   opacity: 1;
 }
 
-/* Skills bars */
+
 .skill-bar {
   justify-content: center;
   height: 10px;
@@ -369,9 +354,7 @@ body.dark-mode .skill-bar {
   background: var(--light);
 }
 
-/* ===================
-   Contact Section
-=================== */
+
 .contact form {
   max-width: 700px;
   margin: auto;
@@ -456,9 +439,7 @@ body.dark-mode .skill-bar {
   opacity: 0.9;
 }
 
-/* ===================
-   Footer
-=================== */
+
 .fixed-footer {
   text-align: center;
   padding: 1.5rem;
@@ -466,9 +447,7 @@ body.dark-mode .skill-bar {
   color: var(--light);
 }
 
-/* ===================
-   Animations
-=================== */
+
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -478,7 +457,7 @@ body.dark-mode .skill-bar {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Section fade-in */
+
 section {
   opacity: 0;
   transform: translateY(30px);
@@ -489,7 +468,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Center headings & responsive text */
+
 section h1,
 section h2,
 section h3 {
