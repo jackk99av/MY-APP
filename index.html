@@ -3,279 +3,687 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jackson Wachira | Graphic Design & UX/UI Portfolio</title>
+
+  <title>Jackson Wachira | Graphic Designer & UI/UX Designer</title>
+
+  <meta
+    name="description"
+    content="Premium Graphic Design and UI/UX Portfolio by Jackson Wachira showcasing branding, web design, posters, and digital experiences."
+  />
 
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js" defer></script>
+
 </head>
 
 <body>
 
+  <!-- LOADER -->
+  <div class="loader">
+    <h1>JW</h1>
+  </div>
+
   <!-- NAVIGATION -->
   <header>
-    <nav class="fixed-nav font-inter" role="navigation" aria-label="Main Navigation">
-      <div class="logo font-montserrat">Jackson Wachira</div>
+    <nav class="fixed-nav">
+
+      <div class="logo">
+        Jackson Wachira
+      </div>
 
       <ul class="nav-links">
-        <li><a href="#hero" class="nav-link font-medium">Home</a></li>
-        <li><a href="#features" class="nav-link font-medium">Features</a></li>
-        <li><a href="#about" class="nav-link font-medium">About</a></li>
-        <li><a href="#portfolio" class="nav-link font-medium">Portfolio</a></li>
-        <li><a href="#skills" class="nav-link font-medium">Skills</a></li>
-        <li><a href="#contact" class="nav-link font-medium">Contact</a></li>
+
+        <li>
+          <a href="#hero">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#portfolio">Portfolio</a>
+        </li>
+
+        <li>
+          <a href="#process">Process</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
       </ul>
 
       <div class="hamburger" id="hamburger">
+
         <span></span>
         <span></span>
         <span></span>
+
       </div>
+
     </nav>
   </header>
 
-  <main>
+  <!-- HERO -->
+  <section id="hero" class="hero">
 
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="hero-content">
+    <div class="hero-blur blur1"></div>
+    <div class="hero-blur blur2"></div>
 
-        <div class="hero-shape shape1"></div>
-        <div class="hero-shape shape2"></div>
-        <div class="hero-shape shape3"></div>
+    <div class="hero-container">
 
-        <span class="hero-tag font-inter">
-          Branding • UI/UX • Web Design
+      <div class="hero-content" data-aos="fade-up">
+
+        <span class="hero-tag">
+          Branding • Graphic Design • UI/UX
         </span>
 
-        <h1 class="hero-headline font-montserrat">
-          Transforming Ideas Into<br>
-          <span class="accent-text">Purposeful Digital Experiences</span>
+        <h1>
+          Designing Digital Experiences <br>
+          That Feel Premium & Perform.
         </h1>
 
-        <p class="hero-subtext font-inter">
-          I design clean, strategic visuals and interfaces that help brands stand out,
-          connect with users, and grow with confidence.
+        <p>
+          Graphic Designer & UI/UX Designer helping brands stand out
+          through strategic visuals, modern interfaces, and clean
+          digital experiences.
         </p>
 
         <div class="hero-buttons">
-          <button class="primary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
-            View Portfolio
+
+          <button
+            class="primary-btn"
+            onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})"
+          >
+            Explore Work
           </button>
-          <button class="secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-            Work With Me
+
+          <button
+            class="secondary-btn"
+            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+          >
+            Start a Project
           </button>
+
         </div>
 
-        <p class="hero-trust font-inter">
-          Trusted by startups, creatives, and growing brands
+        <div class="hero-stats">
+
+          <div>
+            <h3>20+</h3>
+            <p>Design Projects</p>
+          </div>
+
+          <div>
+            <h3>5+</h3>
+            <p>Brand Concepts</p>
+          </div>
+
+          <div>
+            <h3>100%</h3>
+            <p>Creative Focus</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-image" data-aos="zoom-in">
+
+        <img
+          src="/Assets/j__2_-removebg-preview.png"
+          alt="Jackson Wachira"
+        />
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">About Me</span>
+
+      <h2>
+        Crafting Bold Visual Identities
+      </h2>
+
+    </div>
+
+    <div class="about-container">
+
+      <div class="about-image" data-aos="fade-right">
+
+        <img
+          src="/Assets/j__2_-removebg-preview.png"
+          alt="Jackson Wachira"
+        />
+
+      </div>
+
+      <div class="about-content" data-aos="fade-left">
+
+        <p>
+          I’m Jackson Wachira, a Graphic Designer and UI/UX Designer
+          focused on building premium visual experiences for brands,
+          startups, and creatives.
         </p>
 
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="features font-inter">
-      <div class="features-header">
-        <h2 class="section-title font-montserrat">What I Bring to the Table</h2>
-        <p class="section-subtitle">
-          Thoughtful design solutions built to strengthen brand identity and user experience.
+        <p>
+          My approach combines clean aesthetics, strategic thinking,
+          and user-centered design to create work that feels modern,
+          functional, and memorable.
         </p>
-      </div>
 
-      <div class="features-grid">
+        <div class="about-cards">
 
-        <div class="feature-item">
-          <div class="feature-icon" style="background:#ff7e5f;">
-            <img src="/Assets/icons/clean-design.svg" alt="Clean Design">
+          <div class="about-card">
+            <h3>Brand Identity</h3>
+            <p>Modern logos, branding systems & visual direction.</p>
           </div>
-          <h3>Clean & Modern Design</h3>
-          <p>
-            I focus on clarity, spacing, and visual balance to communicate your message
-            with confidence and precision.
-          </p>
-        </div>
 
-        <div class="feature-item">
-          <div class="feature-icon" style="background:#feb47b;">
-            <img src="/Assets/icons/user-focus.svg" alt="User Focus">
+          <div class="about-card">
+            <h3>UI/UX Design</h3>
+            <p>Responsive and user-focused interfaces.</p>
           </div>
-          <h3>User-Centered Experience</h3>
-          <p>
-            Every interface is crafted with usability in mind, ensuring intuitive navigation
-            and meaningful engagement.
-          </p>
-        </div>
 
-        <div class="feature-item">
-          <div class="feature-icon" style="background:#6a82fb;">
-            <img src="/Assets/icons/brand-identity.svg" alt="Brand Identity">
+          <div class="about-card">
+            <h3>Creative Direction</h3>
+            <p>Visual storytelling with premium aesthetics.</p>
           </div>
-          <h3>Strong Brand Identity</h3>
-          <p>
-            I design cohesive visual systems that tell your brand story consistently
-            across all platforms.
-          </p>
-        </div>
 
-        <div class="feature-item">
-          <div class="feature-icon" style="background:#43cea2;">
-            <img src="/Assets/icons/responsive.svg" alt="Responsive Design">
-          </div>
-          <h3>Responsive Design</h3>
-          <p>
-            Designs are optimized for desktop, tablet, and mobile to ensure
-            seamless performance everywhere.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon" style="background:#f9d423;">
-            <img src="/Assets/icons/fast-delivery.svg" alt="Fast Delivery">
-          </div>
-          <h3>Reliable Delivery</h3>
-          <p>
-            Clear communication, structured workflow, and on-time delivery
-            without compromising quality.
-          </p>
         </div>
 
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about font-inter">
-      <div class="about-container">
-        <h2 class="section-title font-montserrat">About Me</h2>
+    </div>
 
-        <div class="about-content">
-          <img src="/Assets/j__2_-removebg-preview.png" alt="Jackson Wachira" class="profile-img">
+  </section>
 
-          <p class="profile-p">
-            I’m a graphic designer with a strong interest in user experience and brand storytelling.
-            My work blends creativity with strategy to deliver visuals that are both functional
-            and visually refined.
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">Portfolio</span>
+
+      <h2>
+        Selected Work
+      </h2>
+
+    </div>
+
+    <!-- FILTERS -->
+    <div class="portfolio-filters">
+
+      <button class="active">All</button>
+      <button>Branding</button>
+      <button>Posters</button>
+      <button>UI/UX</button>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="portfolio-grid">
+
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
+
+        <img
+          src="/Assets/Burger Poster.png"
+          alt="Burger Poster"
+        />
+
+        <div class="portfolio-overlay">
+
+          <span>Poster Design</span>
+
+          <h3>
+            Burger Campaign Poster
+          </h3>
+
+          <p>
+            Promotional poster design for food marketing campaign.
           </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="portfolio font-inter">
-      <h2 class="section-title font-montserrat">Selected Work</h2>
+          <a
+            href="/Assets/Burger Poster.png"
+            target="_blank"
+          >
+            View Project
+          </a>
 
-      <div class="portfolio-grid">
-
-        <div class="portfolio-item">
-          <img src="/Assets/j__2_-removebg-preview.png" alt="Web Design Project">
-          <div class="portfolio-overlay">
-            <h3>Web Design Project</h3>
-            <p>E-commerce branding & UX/UI design</p>
-            <a href="https://embed.figma.com/design/noNtOnGu0rqQJJJoajdaeV/Untitled?node-id=0-1&embed-host=share" target="_blank">View Project</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/j__2_-removebg-preview.png" alt="Mobile App Design">
-          <div class="portfolio-overlay">
-            <h3>Mobile App UI</h3>
-            <p>Productivity app UX/UI design</p>
-            <a href="https://embed.figma.com/design/noNtOnGu0rqQJJJoajdaeV/Untitled?node-id=0-1&embed-host=share" target="_blank">View Project</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/Burger Poster.png" alt="Burger Poster">
-          <div class="portfolio-overlay">
-            <h3>Burger Poster</h3>
-            <p>Event poster design</p>
-            <a href="/Assets/Burger Poster.png" target="_blank">View Full</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/club poster.jpg" alt="Club Poster">
-          <div class="portfolio-overlay">
-            <h3>Club Poster</h3>
-            <p>Night event promotion</p>
-            <a href="/Assets/club poster.jpg" target="_blank">View Full</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/WhatsApp Image 2026-01-09 at 16.37.18.jpeg" alt="Services Poster">
-          <div class="portfolio-overlay">
-            <h3>Services Poster</h3>
-            <p>Marketing & service promotion</p>
-            <a href="/Assets/WhatsApp Image 2026-01-09 at 16.37.18.jpeg" target="_blank">View Full</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/fashion brand art design logo(1).png" alt="Fashion Brand Logo">
-          <div class="portfolio-overlay">
-            <h3>Fashion Brand Logo</h3>
-            <p>Minimal logo identity</p>
-            <a href="/Assets/fashion brand art design logo(1).png" target="_blank">View Full</a>
-          </div>
-        </div>
-
-        <div class="portfolio-item">
-          <img src="/Assets/automotive cover magazine.jpg" alt="Automotive Design">
-          <div class="portfolio-overlay">
-            <h3>Automotive Design</h3>
-            <p>Magazine cover & poster mockup</p>
-            <a href="/Assets/automotive cover magazine.jpg" target="_blank">View Full</a>
-          </div>
         </div>
 
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills font-inter">
-      <h2 class="section-title font-montserrat">Skills & Tools</h2>
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
 
-      <div class="skills-container">
-        <div class="skill-item"><h3>Adobe Illustrator</h3><div class="skill-bar" data-skill="95%"></div></div>
-        <div class="skill-item"><h3>Adobe Photoshop</h3><div class="skill-bar" data-skill="85%"></div></div>
-        <div class="skill-item"><h3>Sketch</h3><div class="skill-bar" data-skill="75%"></div></div>
-        <div class="skill-item"><h3>Figma</h3><div class="skill-bar" data-skill="85%"></div></div>
-        <div class="skill-item"><h3>UI / UX Design</h3><div class="skill-bar" data-skill="65%"></div></div>
+        <img
+          src="/Assets/club poster.jpg"
+          alt="Club Poster"
+        />
+
+        <div class="portfolio-overlay">
+
+          <span>Event Promotion</span>
+
+          <h3>
+            Club Event Poster
+          </h3>
+
+          <p>
+            Nightlife visual design with bold typography and atmosphere.
+          </p>
+
+          <a
+            href="/Assets/club poster.jpg"
+            target="_blank"
+          >
+            View Project
+          </a>
+
+        </div>
+
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact font-inter">
-      <h2 class="section-title font-montserrat">Let’s Work Together</h2>
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
 
-      <form action="https://formspree.io/f/xkgjpezy" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" required>
+        <img
+          src="/Assets/AIRBNB2.png"
+          alt="Airbnb Poster"
+        />
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+        <div class="portfolio-overlay">
 
-        <label>Message</label>
-        <textarea name="message" required></textarea>
+          <span>Marketing Design</span>
 
-        <button type="submit">Send Message</button>
+          <h3>
+            Airbnb Luxury Poster
+          </h3>
+
+          <p>
+            High-end accommodation promotional campaign design.
+          </p>
+
+          <a
+            href="/Assets/AIRBNB2.png"
+            target="_blank"
+          >
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
+
+        <img
+          src="/Assets/automotive cover magazine.jpg"
+          alt="Automotive Design"
+        />
+
+        <div class="portfolio-overlay">
+
+          <span>Magazine Design</span>
+
+          <h3>
+            Automotive Cover Concept
+          </h3>
+
+          <p>
+            Editorial-inspired automotive visual composition.
+          </p>
+
+          <a
+            href="/Assets/automotive cover magazine.jpg"
+            target="_blank"
+          >
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
+
+        <img
+          src="/Assets/fashion brand art design logo(1).png"
+          alt="Fashion Brand Logo"
+        />
+
+        <div class="portfolio-overlay">
+
+          <span>Brand Identity</span>
+
+          <h3>
+            Fashion Brand Logo
+          </h3>
+
+          <p>
+            Minimal and luxurious fashion branding concept.
+          </p>
+
+          <a
+            href="/Assets/fashion brand art design logo(1).png"
+            target="_blank"
+          >
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="portfolio-item" data-aos="fade-up">
+
+        <img
+          src="/Assets/poster-BURGER-Recovered.png"
+          alt="Food Poster"
+        />
+
+        <div class="portfolio-overlay">
+
+          <span>Food Campaign</span>
+
+          <h3>
+            Premium Food Promotion
+          </h3>
+
+          <p>
+            Clean and modern food advertising poster layout.
+          </p>
+
+          <a
+            href="/Assets/poster-BURGER-Recovered.png"
+            target="_blank"
+          >
+            View Project
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="process">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">Workflow</span>
+
+      <h2>
+        My Design Process
+      </h2>
+
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-card" data-aos="fade-up">
+        <h3>01</h3>
+        <h4>Research</h4>
+        <p>Understanding the brand, audience, and project goals.</p>
+      </div>
+
+      <div class="process-card" data-aos="fade-up">
+        <h3>02</h3>
+        <h4>Concept</h4>
+        <p>Building creative direction and visual exploration.</p>
+      </div>
+
+      <div class="process-card" data-aos="fade-up">
+        <h3>03</h3>
+        <h4>Design</h4>
+        <p>Crafting clean layouts and premium visual experiences.</p>
+      </div>
+
+      <div class="process-card" data-aos="fade-up">
+        <h3>04</h3>
+        <h4>Refinement</h4>
+        <p>Polishing details for final presentation and delivery.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">Expertise</span>
+
+      <h2>
+        Skills & Tools
+      </h2>
+
+    </div>
+
+    <div class="skills-container">
+
+      <div class="skill-item">
+        <h3>Adobe Illustrator</h3>
+        <div class="skill-bar">
+          <span style="width:95%;"></span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <h3>Adobe Photoshop</h3>
+        <div class="skill-bar">
+          <span style="width:90%;"></span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <h3>Figma</h3>
+        <div class="skill-bar">
+          <span style="width:85%;"></span>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <h3>UI / UX Design</h3>
+        <div class="skill-bar">
+          <span style="width:80%;"></span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">Feedback</span>
+
+      <h2>
+        Client Impressions
+      </h2>
+
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card" data-aos="fade-up">
+
+        <p>
+          “Jackson delivered clean visuals that elevated our brand
+          identity and gave our campaign a premium feel.”
+        </p>
+
+        <h4>Creative Client</h4>
+
+      </div>
+
+      <div class="testimonial-card" data-aos="fade-up">
+
+        <p>
+          “Professional communication, modern design approach,
+          and strong attention to detail.”
+        </p>
+
+        <h4>Startup Founder</h4>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+
+    <div class="section-header" data-aos="fade-up">
+
+      <span class="section-tag">Contact</span>
+
+      <h2>
+        Let’s Build Something Great
+      </h2>
+
+    </div>
+
+    <div class="contact-container">
+
+      <form
+        action="https://formspree.io/f/xkgjpezy"
+        method="POST"
+        data-aos="fade-right"
+      >
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+
+        <textarea
+          name="message"
+          placeholder="Tell me about your project..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
       </form>
 
-      <p id="success-message">Message sent successfully!</p>
+      <div class="contact-info" data-aos="fade-left">
 
-      <div class="contact-links">
-        <a href="mailto:jacksonwachiramwagira@gmail.com"><img src="/Assets/gmail.png">Email</a>
-        <a href="https://www.linkedin.com/in/yourlinkedinusername" target="_blank"><img src="/Assets/linkedin(1).png">LinkedIn</a>
-        <a href="https://wa.me/254740026528" target="_blank"><img src="/Assets/whatsapp.png">WhatsApp</a>
+        <h3>
+          Available for freelance projects,
+          branding, and UI/UX collaborations.
+        </h3>
+
+        <div class="contact-links">
+
+          <a href="mailto:jacksonwachiramwagira@gmail.com">
+            Email Me
+          </a>
+
+          <a
+            href="https://wa.me/254740026528"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
       </div>
-    </section>
 
-  </main>
+    </div>
 
-  <footer class="fixed-footer font-inter">
-    <p>&copy; 2025 Jackson Wachira. All Rights Reserved.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+
+        <h3>
+          Jackson Wachira
+        </h3>
+
+        <p>
+          Graphic Designer & UI/UX Designer
+        </p>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#hero">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+    </div>
+
+    <p class="copyright">
+      © 2026 Jackson Wachira. All Rights Reserved.
+    </p>
+
   </footer>
 
-  <script defer src="script.js"></script>
+ 
+
 </body>
 </html>

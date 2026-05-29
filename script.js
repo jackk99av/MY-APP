@@ -1,177 +1,320 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 120,
+  });
+  /* =========================================
      CONFIG
-  ========================== */
-  const NAV_OFFSET = 90; // height of fixed nav
+  ========================================= */
 
-  /* =========================
-     SMOOTH SCROLL (WITH OFFSET)
-  ========================== */
-  const smoothScrollTo = (target) => {
-    const element = document.getElementById(target);
-    if (!element) return;
+  const NAV_OFFSET = 90;
 
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - NAV_OFFSET;
+  /* =========================================
+     SMOOTH SCROLL
+  ========================================= */
+
+  const smoothScrollTo = (targetId) => {
+
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    const targetPosition =
+      target.getBoundingClientRect().top +
+      window.pageYOffset -
+      NAV_OFFSET;
 
     window.scrollTo({
-      top: offsetPosition,
+      top: targetPosition,
       behavior: "smooth",
     });
   };
 
-  const navLinks = document.querySelectorAll(
-    'nav ul li a, .fixed-nav ul li a'
-  );
+  /* =========================================
+     NAVIGATION LINKS
+  ========================================= */
+
+  const navLinks = document.querySelectorAll(".nav-links a");
 
   navLinks.forEach((link) => {
+
     link.addEventListener("click", (e) => {
+
       const href = link.getAttribute("href");
-      if (href && href.startsWith("#")) {
+
+      if (href.startsWith("#")) {
+
         e.preventDefault();
+
         smoothScrollTo(href.substring(1));
+
+        closeMenu();
       }
     });
   });
 
-  /* =========================
+  /* =========================================
      HERO BUTTONS
-  ========================== */
-  const viewWorkBtn = document.querySelector(".primary");
-  const contactBtn = document.querySelector(".secondary");
+  ========================================= */
 
-  viewWorkBtn?.addEventListener("click", () => smoothScrollTo("portfolio"));
-  contactBtn?.addEventListener("click", () => smoothScrollTo("contact"));
+  const exploreBtn = document.querySelector(".primary-btn");
+  const projectBtn = document.querySelector(".secondary-btn");
 
-  /* =========================
-     SKILLS BAR ANIMATION
-  ========================== */
-  const skillBars = document.querySelectorAll(".skill-bar");
+  exploreBtn?.addEventListener("click", () => {
+    smoothScrollTo("portfolio");
+  });
 
-  const skillObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const bar = entry.target;
-          bar.style.width = bar.dataset.skill;
-          observer.unobserve(bar); // animate once
-        }
-      });
-    },
-    { threshold: 0.6 }
-  );
+  projectBtn?.addEventListener("click", () => {
+    smoothScrollTo("contact");
+  });
 
-  skillBars.forEach((bar) => skillObserver.observe(bar));
-
-  /* =========================
+  /* =========================================
      HAMBURGER MENU
-  ========================== */
+  ========================================= */
+
   const hamburger = document.getElementById("hamburger");
-  const navlinks = document.getElementById("nav-links");
-  const navLinkItems = document.querySelectorAll(".nav-link");
+  const navMenu = document.querySelector(".nav-links");
 
   const closeMenu = () => {
+
     hamburger?.classList.remove("active");
-    navlinks?.classList.remove("active");
+    navMenu?.classList.remove("active");
+
     document.body.classList.remove("no-scroll");
   };
 
   hamburger?.addEventListener("click", () => {
+
     hamburger.classList.toggle("active");
-    navlinks.classList.toggle("active");
+    navMenu.classList.toggle("active");
+
     document.body.classList.toggle("no-scroll");
   });
 
-  navLinkItems.forEach((link) =>
-    link.addEventListener("click", closeMenu)
-  );
-
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) closeMenu();
+
+    if (window.innerWidth > 768) {
+      closeMenu();
+    }
   });
 
-  /* =========================
-     ACTIVE NAV LINK ON SCROLL
-  ========================== */
+  /* =========================================
+     ACTIVE NAVIGATION LINK
+  ========================================= */
+
   const sections = document.querySelectorAll("section");
-  const fixedNavLinks = document.querySelectorAll(".fixed-nav ul li a");
 
   window.addEventListener("scroll", () => {
-    let current = "";
+
+    let currentSection = "";
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - NAV_OFFSET - 20;
+
+      const sectionTop =
+        section.offsetTop - NAV_OFFSET - 100;
+
       if (window.pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
+
+        currentSection = section.getAttribute("id");
       }
     });
 
-    fixedNavLinks.forEach((link) => {
+    navLinks.forEach((link) => {
+
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
+
+      if (
+        link.getAttribute("href") ===
+        `#${currentSection}`
+      ) {
         link.classList.add("active");
       }
     });
   });
 
-  /* =========================
-     DARK MODE TOGGLE
-  ========================== */
-  const darkToggle = document.querySelector(".dark-mode-toggle");
+  /* =========================================
+     SECTION REVEAL ANIMATION
+  ========================================= */
 
-  if (darkToggle) {
-    darkToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-      localStorage.setItem(
-        "dark-mode",
-        document.body.classList.contains("dark-mode")
-      );
-    });
+  const revealElements = document.querySelectorAll(
+    ".portfolio-item, .process-card, .about-card, .testimonial-card, .skill-item"
+  );
 
-    if (localStorage.getItem("dark-mode") === "true") {
-      document.body.classList.add("dark-mode");
+  const revealObserver = new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+
+    {
+      threshold: 0.15,
     }
-  }
+  );
 
-  /* =========================
-     SECTION FADE-IN ON SCROLL
-  ========================== */
-  const revealSections = () => {
-    const triggerBottom = window.innerHeight * 0.8;
+  revealElements.forEach((element) => {
 
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      if (sectionTop < triggerBottom) {
-        section.classList.add("visible");
-      }
-    });
-  };
+    revealObserver.observe(element);
+  });
 
-  window.addEventListener("scroll", revealSections);
-  revealSections();
+  /* =========================================
+     SKILLS ANIMATION
+  ========================================= */
 
-  /* =========================
-     CONTACT FORM SUBMIT
-  ========================== */
+  const skillBars = document.querySelectorAll(".skill-bar span");
+
+  const skillObserver = new IntersectionObserver(
+
+    (entries, observer) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          const bar = entry.target;
+
+          const width = bar.style.width;
+
+          bar.style.width = "0";
+
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 200);
+
+          observer.unobserve(bar);
+        }
+      });
+    },
+
+    {
+      threshold: 0.5,
+    }
+  );
+
+  skillBars.forEach((bar) => {
+
+    skillObserver.observe(bar);
+  });
+
+  /* =========================================
+     CONTACT FORM
+  ========================================= */
+
   const form = document.querySelector("form");
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+
+    form.addEventListener("submit", async (e) => {
+
       e.preventDefault();
 
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      }).then((response) => {
+      const submitButton =
+        form.querySelector("button");
+
+      submitButton.innerText = "Sending...";
+
+      try {
+
+        const response = await fetch(form.action, {
+
+          method: "POST",
+
+          body: new FormData(form),
+
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
         if (response.ok) {
-          document.getElementById("success-message").style.display = "block";
+
+          submitButton.innerText =
+            "Message Sent ✓";
+
           form.reset();
+
+          setTimeout(() => {
+
+            submitButton.innerText =
+              "Send Message";
+
+          }, 3000);
+
         } else {
-          alert("Something went wrong. Please try again.");
+
+          submitButton.innerText =
+            "Something Went Wrong";
         }
-      });
+
+      } catch (error) {
+
+        submitButton.innerText =
+          "Network Error";
+      }
     });
   }
+
+  /* =========================================
+     LOADER
+  ========================================= */
+
+  window.addEventListener("load", () => {
+
+    const loader =
+      document.querySelector(".loader");
+
+    loader?.classList.add("loader-hidden");
+  });
+
+  /* =========================================
+     NAVBAR BACKGROUND ON SCROLL
+  ========================================= */
+
+  const navbar =
+    document.querySelector(".fixed-nav");
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+      navbar.style.background =
+        "rgba(10,10,10,0.92)";
+
+      navbar.style.borderBottom =
+        "1px solid rgba(255,255,255,0.08)";
+
+    } else {
+
+      navbar.style.background =
+        "rgba(10,10,10,0.7)";
+    }
+  });
+
+  /* =========================================
+     PORTFOLIO FILTER BUTTONS
+  ========================================= */
+
+  const filterButtons =
+    document.querySelectorAll(".portfolio-filters button");
+
+  filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+    });
+  });
+
 });
